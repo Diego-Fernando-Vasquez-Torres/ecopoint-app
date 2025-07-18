@@ -5,11 +5,11 @@ const Loader = ({ message = "Cargando..." }) => {
   return (
     <div className="loader-container">
       <div className="loader-content">
-        <div className="loader-icon">
-          <svg className="spin" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none">
+        <div className="loader-icon recycle-animation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none">
             <path
+              d="M12 2v4l2-2 1.5 1.5L12 10 8.5 5.5 10 4l2 2V2zM3 13h4l-2 2 1.5 1.5L10 14l-4.5-4.5L4 11l2 2H3zm18 0h-4l2 2-1.5 1.5L14 14l4.5-4.5L20 11l-2 2h3zM12 22v-4l-2 2-1.5-1.5L12 14l3.5 4.5L14 20l-2-2v4z"
               fill="#22c55e"
-              d="M12 2a1 1 0 0 1 1 1v1.05a7.002 7.002 0 0 1 5.917 5.917H20a1 1 0 1 1 0 2h-1.05a7.002 7.002 0 0 1-5.917 5.917V21a1 1 0 1 1-2 0v-1.05a7.002 7.002 0 0 1-5.917-5.917H4a1 1 0 1 1 0-2h1.05A7.002 7.002 0 0 1 10.967 4.05V3a1 1 0 0 1 1-1z"
             />
           </svg>
         </div>

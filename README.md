@@ -1,4 +1,3 @@
-```markdown
 <h1 align="center">
   ♻️ EcoPoint
 </h1>
@@ -16,52 +15,76 @@
 
 ## 🌍 Descripción general
 
-**EcoPoint** es una aplicación web progresiva (PWA) diseñada para ejecutarse en dispositivos móviles al escanear un código QR presente en un contenedor físico (EcoBox). La app permite registrar el reciclaje de botellas, asignar puntos virtuales (EcoPoints) y canjearlos por logros o premios.
+**EcoPoint** es una aplicación web progresiva (PWA) diseñada para ejecutarse en dispositivos móviles mediante el escaneo de un código QR colocado en un contenedor físico inteligente (EcoBox).
 
-Esta plataforma busca motivar a las personas a **reciclar de forma lúdica**, integrando recompensas digitales con acciones físicas reales.
+La app permite registrar el reciclaje de botellas y otorga puntos virtuales (EcoPoints), los cuales pueden ser canjeados por premios o logros dentro de la plataforma.
+
+Nuestro objetivo es **motivar a las personas a reciclar** a través de una experiencia interactiva, educativa y gamificada.
 
 ---
 
 ## ✨ Características principales
 
-- Autenticación con correo, Google o Facebook
-- Registro y seguimiento de EcoPoints
-- Pantalla de escaneo QR para conectar con EcoBoxes
-- Sistema de logros y niveles
-- Catálogo de premios y tienda
-- Interfaz adaptativa y moderna (UI/UX mobile-first)
+- ✅ Autenticación con Google (Firebase)
+- ✅ Detección de contenedores inteligentes mediante escaneo QR
+- ✅ Verificación en Firestore si el contenedor existe
+- ✅ Animaciones secuenciales de conexión y apertura del compartimiento
+- ✅ Conteo de botellas simuladas (interfaz lista para conectar con hardware)
+- ✅ Almacenamiento del nombre del contenedor y cantidad de botellas
+- ✅ Navegación fluida entre vistas móviles (React Router)
+- ✅ Estilo limpio, moderno y responsivo (UI/UX centrado en móviles)
 
 ---
 
 ## 🧱 Stack tecnológico
 
-| Tecnología      | Uso principal                  |
-|----------------|--------------------------------|
-| React + Vite   | Frontend rápido y modular      |
-| Firebase       | Auth, Firestore, Hosting       |
-| React Router   | Navegación SPA                 |
-| CSS Modules    | Estilos limpios y escalables   |
-| GitHub         | Versionado y colaboración      |
+| Tecnología      | Uso principal                      |
+|----------------|------------------------------------|
+| React + Vite   | Frontend rápido y modular          |
+| Firebase       | Autenticación, Firestore, Hosting  |
+| React Router   | Navegación SPA                     |
+| CSS Modules    | Estilos escalables por componente  |
+| GitHub         | Control de versiones y colaboración|
+
+---
+
+## 📦 Funcionalidades ya integradas
+
+### 🔐 Autenticación Firebase
+- Inicio de sesión con Google.
+- Gestión de sesión persistente.
+- Almacenamiento de usuarios en Firestore.
+
+### 📲 Conexión con EcoBox
+- Escaneo de QR → obtención de ID del contenedor.
+- Verificación en Firestore si el contenedor existe.
+- Transición de estados: `Conectando → Reconocido → Abriendo compartimiento`.
+
+### 🧴 Registro de botellas
+- Conteo simulado de botellas insertadas (para pruebas de frontend).
+- Integración pensada para futura conexión con el hardware del contenedor.
+- Actualización visual y lógica del contador y cierre del ciclo.
 
 ---
 
 ## 🗂️ Estructura del proyecto
 
-```
-
 ecopoint-app/
-├── public/
+├── public/ → Archivos estáticos e íconos
 ├── src/
-│   ├── assets/           → Imágenes y logos
-│   ├── pages/            → Login, Home, Registro, etc.
-│   ├── components/       → Navegación, botones, etc.
-│   ├── services/         → Configuración de Firebase
-│   └── App.jsx
-├── .env                  → Variables privadas (no subir)
+│ ├── assets/ → Imágenes, logos y SVGs
+│ ├── components/ → Botones, navegación, loader
+│ ├── pages/ → Login, Home, InsertandoBotellas, etc.
+│ ├── services/ → firebaseConfig.js y lógica de Firestore
+│ ├── styles/ → Archivos CSS por componente
+│ └── App.jsx → Rutas principales
+├── .env → Variables privadas (no subir)
 ├── README.md
 └── package.json
 
-````
+yaml
+Copiar
+Editar
 
 ---
 
@@ -72,50 +95,56 @@ git clone https://github.com/Diego-Fernando-Vasquez-Torres/ecopoint-app.git
 cd ecopoint-app
 npm install
 npm run dev
-````
-
 Abre el navegador en:
 
-```
+arduino
+Copiar
+Editar
 http://localhost:5173
-```
+🧪 Estado actual del desarrollo
+ Login y sesión persistente con Firebase
 
----
+ Escaneo QR funcional (con verificación en la base de datos)
 
-## 👥 Equipo de desarrollo
+ Animaciones de conexión e interacción simulada con el contenedor
 
-* **Diego Vásquez** – *Frontend, UI/UX y Coordinación*
-* \[Agregar aquí otros miembros]
+ Registro de botellas simuladas (pendiente integración física)
 
----
+ Navegación fluida entre pantallas
 
-## 🧪 Estado actual del desarrollo
+ Logros y sistema de recompensas (en desarrollo)
 
-* [x] Login/Registro conectado a Firebase
-* [x] Interfaz responsive pensada para móviles
-* [x] Home con barra de navegación
-* [ ] Escaneo QR (en progreso)
-* [ ] Logros y tienda de recompensas
+ Tienda y canje de puntos (pendiente)
 
----
+ Panel de usuario (historial de reciclaje, estadísticas)
 
-## 📄 Licencia
+🛠️ Notas para conexión con hardware
+Para el equipo de hardware:
 
-Este proyecto está bajo la [Licencia MIT](LICENSE).
+La pantalla /insertando-botellas ya simula las fases del proceso.
 
----
+Las funciones están preparadas para:
 
-## 💬 Contacto
+Reconocer que el contenedor está conectado (basado en su ID en Firestore).
 
-¿Ideas, sugerencias o feedback?
-Puedes abrir un issue o escribirnos al equipo directamente.
+Simular apertura de compuerta (puede integrarse señal GPIO aquí).
 
----
+Simular conteo de botellas (reemplazar con lectura de sensores).
 
-<p align="center">
-  <strong>🌱 EcoPoint – Reciclar nunca fue tan divertido.</strong><br/>
-  <em>Creando conciencia ecológica, un escaneo a la vez.</em>
-</p>
-```
+Esperar un tiempo y cerrar (ideal para eventos físicos de cierre).
 
----
+Comentarios están agregados en el código para facilitar el enlace entre software y hardware.
+
+👥 Equipo de desarrollo
+Diego Vásquez – Frontend, Backend | UI/UX
+
+[Agregar aquí más miembros si corresponde]
+
+📄 Licencia
+Este proyecto está bajo la Licencia MIT.
+
+💬 Contacto
+¿Tienes ideas, sugerencias o feedback?
+Abre un issue en este repositorio o escríbenos directamente.
+
+<p align="center"> <strong>🌱 EcoPoint –.</strong><br/> <em>Conectando personas, tecnología y sostenibilidad.</em> </p> ```

@@ -2,44 +2,175 @@
   text-align: center;
   padding: 2rem;
   font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.titulo-verde {
+.insertando-titulo-verde {
   color: #00c853;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.mensaje-bonito {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+.insertando-mensaje-bonito {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: #444;
 }
 
-.botella-icono {
+.insertando-botella-icono {
+  margin: 2rem 0;
+  animation: insertando-float 3s ease-in-out infinite;
+}
+
+@keyframes insertando-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.insertando-contador-botellas {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.insertando-countdown-animado {
+  margin-top: 2rem;
+  animation: insertando-fadeIn 0.5s ease;
+}
+
+.insertando-mensaje-cierre {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.insertando-numero-pulse {
   font-size: 4rem;
-  margin: 1.5rem 0;
+  color: #00c853;
+  font-weight: bold;
+  animation: insertando-pulse 1s ease-in-out infinite;
 }
 
-.contador-botellas {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+@keyframes insertando-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
 }
 
-.contador-regresivo {
-  font-size: 1.2rem;
-  color: #777;
-  margin-top: 1rem;
+@keyframes insertando-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.mensaje-pequeno {
+.insertando-mensaje-pequeno {
   font-size: 0.9rem;
   color: #999;
   margin-top: 2rem;
 }
 
-/* Animación suave */
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.1); opacity: 0.7; }
-  100% { transform: scale(1); opacity: 1; }
+.insertando-mensaje-reconocido {
+  font-size: 1.8rem;
+  color: #00c853;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.animacion-fadein {
+  animation: fadeInScale 1s ease-out;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Animaciones y estilos adicionales */
+
+.insertando-mensaje-reconocido {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-top: 20px;
+  color: #2e7d32;
+}
+
+.animacion-fadein {
+  animation: fadeInScale 0.8s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.insertando-mensaje-sistema {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 30px;
+  color: #424242;
+}
+
+.icono-cargando {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 10px;
+  border: 4px solid #c8e6c9;
+  border-top: 4px solid #2e7d32;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.icono-check {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  background: url('/icons/check-circle.svg') no-repeat center;
+  background-size: contain;
+}
+
+.icono-puerta {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  background: url('/icons/open-door.svg') no-repeat center;
+  background-size: contain;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.insertando-numero-pulse {
+  font-size: 3rem;
+  text-align: center;
+  animation: pulse 1s ease-in-out infinite;
+  color: #2e7d32;
+}
+
+@keyframes inspulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
