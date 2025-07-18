@@ -1,0 +1,45 @@
+/* src/global.css */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML y Body deben ocupar todo el espacio */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Para asegurar que todo ocupe el 100% si se necesita */
+.fullscreen {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Utilidad opcional para centrar cualquier contenido */
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Scroll limpio y sin barras raras */
+body {
+  overflow-x: hidden;
+  color: #111827; /* Gris oscuro elegante */
+}
+/* global.css */
+.form-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
